@@ -1,0 +1,20 @@
+{% set amount = row.images|length %}
+{% if amount == 1 %}
+    {% set width = 'w-full' %}
+{% elseif amount == 2 %}
+    {% set width = 'w-1/2' %}
+{% elseif amount == 3 %}
+    {% set width = 'w-4/12' %}
+{% else %}
+    {% set width = 'w-3/12' %}
+{% endif %}
+<div class="pb-40 md:pb-0 flex w-full flex-wrap wysiwyg align-start">
+    {% for item in row.images %}
+        <div class="{{ width == 'w-full' ? 'text-center' : '' }} {{ width }} md:w-full {{ item.caption ? 'md:mb-30' : '' }} md:p-0 {{ loop.first ? 'pl-0' : '' }} {{ loop.last ? 'pr-0' : '' }} px-10">
+            <img class="" src="{{ TimberImage(item.image).src() }}" alt="">
+            {% if item.caption %}
+                <p class="mt-10 md:mt-0 {{ width == 'w-full' ? 'text-center md:text-left' : 'text-left' }}"><i>{{ item.caption }}</i></p>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>

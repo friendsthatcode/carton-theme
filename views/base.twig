@@ -1,0 +1,7 @@
+{# Base.twig - Used as a basis of other twig templates, use extend to make templates that extend what ever blocks in here exist #}
+{% include 'components/header.twig' %}
+<div class="px-20 md:px-10">
+    {% block content %}
+    {% endblock %}
+</div>
+{% include 'components/footer.twig' %}

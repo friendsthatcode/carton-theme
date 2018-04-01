@@ -1,0 +1,31 @@
+{% extends 'base.twig' %}
+{% block content %}
+
+{% include 'components/partials/post-hero-banner.twig' %}
+
+<div class="section py-50">
+    <div class="fixed-container flex justify-center">
+        <div class="inner-container w-8/12 lg:w-10/12 md:w-full mx-auto text-center">
+            <p class="h1 uppercase">{{ post.title_override ? post.title_override : post.title }}</p>
+            <p class="mt-10">{{ post.date('jS F Y') }}</p>
+            <span class="small-divider black"></span>
+            <div class="pb-60 mt-5">
+                {% include 'components/partials/social-list.twig' %}
+            </div>
+            {% for key, row in post.get_field('content_rows') %}
+                {% set template = 'components/content-rows/' ~ row.acf_fc_layout ~ '.twig' %}
+                {% include template ignore missing with { row : row, key: key } %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<div class="section py-50">
+    <div class="flex flex-wrap justify-center">
+        <p class="h1 uppercase w-full text-center pb-30">More news</p>
+        {% for item in posts %}
+            {% include 'components/partials/single-pod.twig' with { 'item': item } %}
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

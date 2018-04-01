@@ -1,0 +1,16 @@
+<?php
+// Allows us to show the 'hide field label' option in Gravity Forms
+add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
+/**
+ * Fix Gravity Form Tabindex Conflicts
+ * https://gravitywiz.com/fix-gravity-form-tabindex-conflicts/
+ */
+add_filter( 'gform_tabindex', 'gform_tabindexer', 10, 2 );
+
+function gform_tabindexer( $tab_index, $form = false ) {
+    $starting_index = 1000; // if you need a higher tabindex, update this number
+    if( $form ) {
+        add_filter( 'gform_tabindex_' . $form['id'], 'gform_tabindexer' );
+    }
+    return GFCommon::$tab_index >= $starting_index ? GFCommon::$tab_index : $starting_index;
+}

@@ -1,0 +1,142 @@
+{% extends 'base.twig' %}
+{% block content %}
+
+    {% include 'components/partials/hero-banner.twig' %}
+
+    <div class="section py-150 md:pt-10 md:pb-10">
+        <div class="mobile-tabs-wrap fixed-container flex flex-wrap md:px-0">
+            <div class="md:flex mx-auto none small my-30 border-bottom-black thick-border ff-proxima">
+                <div class="uppercase text-center pr-10 relative tab-title js-tab-title" data-target="processors">
+                    Processors
+                    <svg class='tab-caret isActive svg-fill:black'>
+                        <use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#caret-right'></use>
+                    </svg>
+                </div>
+                <div class="uppercase text-center px-10 relative tab-title js-tab-title" data-target="wholesale">
+                    Wholesale
+                    <svg class='tab-caret svg-fill:black'>
+                        <use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#caret-right'></use>
+                    </svg>
+                </div>
+                <div class="uppercase text-center px-10 relative tab-title js-tab-title" data-target="retail">
+                    Retail
+                    <svg class='tab-caret svg-fill:black'>
+                        <use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#caret-right'></use>
+                    </svg>
+                </div>
+                <div class="uppercase text-center pl-10 relative tab-title js-tab-title" data-target="catering">
+                    Catering
+                    <svg class='tab-caret svg-fill:black'>
+                        <use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#caret-right'></use>
+                    </svg>
+                </div>
+            </div>
+            <div class="w-1/2 md:w-full pl-10 pr-5 pb-10 md:pb-0 md:px-0 relative tab-content js-tab-content isActive" id="processors">
+                <img src="{{ theme.uri }}/assets/img/illustrations/processors-illustration.png" alt="" class="illustration md:none top-left">
+                <div class="bg-colour-inner-background px-40 py-50 h-100 relative z-2">
+                    <p class="h2 uppercase">Processors</p>
+                    <span class="small-divider black"></span>
+                    <p class="pb-20">JWE’s founders Peter Birch and David Langmead have been sourcing and processing babyleaf salads since babyleaf salads began. You can’t get any more heritage than that!</p>
+                    <a href="/processors/" class="ff-proxima uppercase bold border-bottom-black thick-border spaced-letters">Read more</a>
+                </div>
+            </div>
+            <div class="w-1/2 md:w-full pl-10 pr-5 pb-10 md:pb-0 md:px-0 relative tab-content js-tab-content" id="wholesale">
+                <img src="{{ theme.uri }}/assets/img/illustrations/wholesale-illustration.png" alt="" class="illustration md:none top-right">
+                <div class="bg-colour-inner-background px-40 py-50 h-100 relative z-2">
+                    <p class="h2 uppercase">Wholesale</p>
+                    <span class="small-divider black"></span>
+                    <p class="pb-20">With a vast amount of experience of the wholesale markets in our team we pride ourselves on being an excellent partner for all our market customer’s leafy salads needs.</p>
+                    <a href="/wholesale/" class="ff-proxima uppercase bold border-bottom-black thick-border spaced-letters">Read more</a>
+                </div>
+            </div>
+            <div class="w-1/2 md:w-full pl-10 pr-5 pb-10 md:pb-0 md:px-0 relative tab-content js-tab-content" id="retail">
+                <img src="{{ theme.uri }}/assets/img/illustrations/retail-illustration.png" alt="" class="illustration md:none bottom-left">
+                <div class="bg-colour-inner-background px-40 py-50 h-100 relative z-2">
+                    <p class="h2 uppercase">Retail</p>
+                    <span class="small-divider black"></span>
+                    <p class="pb-20">Our unwashed retail lines consistently outperform expectations and our Ready To Eat retail lines all go through our innovative Smartleaf process keeping our salad fresh and safe.</p>
+                    <a href="/retail/" class="ff-proxima uppercase bold border-bottom-black thick-border spaced-letters">Read more</a>
+                </div>
+            </div>
+            <div class="w-1/2 md:w-full pl-10 pr-5 pb-10 md:pb-0 md:px-0 relative tab-content js-tab-content" id="catering">
+                <img src="{{ theme.uri }}/assets/img/illustrations/catering-illustration.png" alt="" class="illustration md:none bottom-right">
+                <div class="bg-colour-inner-background px-40 py-50 h-100 relative z-2">
+                    <p class="h2 uppercase">Catering</p>
+                    <span class="small-divider black"></span>
+                    <p class="pb-20">Unwashed and Ready To Eat products available for the catering sector. Contact us now!</p>
+                    <a href="/catering/" class="ff-proxima uppercase bold border-bottom-black thick-border spaced-letters">Read more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section py-150 md:py-80 bg-colour-inner-background mb-10">
+        <div class="fixed-container flex justify-center flex-wrap text-center">
+            <p class="h1 uppercase w-7/12 md:w-full">Dedicated to innovation &amp; quality</p>
+            <span class="small-divider black"></span>
+            <p class="w-7/12 md:w-full">We pride ourself in our ability to innovate and offer high quality products to our customers. We’ve achieved this through our own innovative technology, Smartleaf.</p>
+            <div class="flex flex-wrap w-full mt-100 md:mt-50 align-center">
+                <div class="w-1/2 md:w-full">
+                    <img src="{{ theme.uri }}/assets/img/misting-half.png" alt="">
+                </div>
+                <div class="w-1/2 md:w-full mx-auto text-left md:text-center">
+                    <p class="h1 uppercase">Innovation</p>
+                    <span class="small-divider black"></span>
+                    <p class="mb-20">We run our own research and development programme, lead by Dr. Scott Phillips, that advances the latest technology. This includes our pioneering misting technology, which enables us to bring you leaves the are fresher for longer and safer to eat.</p>
+                    <a target="_blank" href="https://www.smartleaf.co.uk/" class="ff-proxima uppercase bold spaced-letters border-bottom-black thick-border">Discover Smartleaf</a>
+                </div>
+            </div>
+            <div class="flex flex-wrap w-full pt-30 md:pt-50 align-center">
+                <div class="w-1/2 md:w-full order-2 md:order-1">
+                    <img class="w-7/12 md:w-full" src="{{ theme.uri }}/assets/img/quality-half.png" alt="">
+                </div>
+                <div class="w-1/2 md:w-full mx-auto text-left md:text-center order-1 md:order-2">
+                    <p class="h1 uppercase">Quality</p>
+                    <span class="small-divider black"></span>
+                    <p class="pb-10">We take great pride in the quality of our products. From freshness to reliability, we’re regarded as being amongst the best with our customers.</p>
+                    <p>Our outstanding quality is down to innovations we’ve made in our processes, such as packing and misting, to keep your salad fresh for longer.</p>
+                </div>
+            </div>
+            <div class="pt-30">
+                <a href="/brands/" class="ff-proxima uppercase bold spaced-letters border-bottom-black thick-border">Explore our brands</a>
+            </div>
+        </div>
+    </div>
+    <div class="section py-150 md:py-80 bg-colour-inner-background">
+        <div class="fixed-container flex justify-center flex-wrap text-center">
+            <p class="h1 uppercase w-full">Assured &amp; Accredited</p>
+            <span class="small-divider black"></span>
+            <div class="flex w-full flex-wrap justify-between align-center">
+                <div class="pr-40 pl-0 w-2/12 md:w-1/3 md:pr-10">
+                    <img src="{{ theme.uri }}/assets/img/logos/brc-logo.png" alt="">
+                </div>
+                <div class="px-40 w-2/12 md:w-1/3 md:px-10">
+                    <img src="{{ theme.uri }}/assets/img/logos/ifs-logo.png" alt="">
+                </div>
+                <div class="px-40 w-2/12 md:w-1/3 md:px-10">
+                    <img src="{{ theme.uri }}/assets/img/logos/leaf-logo.png" alt="">
+                </div>
+                <div class="px-40 w-2/12 md:w-1/3 md:px-10">
+                    <img src="{{ theme.uri }}/assets/img/logos/global-gap-logo.png" alt="">
+                </div>
+                <div class="px-40 w-2/12 md:w-1/3 md:px-10">
+                    <img src="{{ theme.uri }}/assets/img/logos/assured-logo.png" alt="">
+                </div>
+                <div class="pl-40 w-2/12 md:w-1/3 md:pl-10 pr-0">
+                    <img src="{{ theme.uri }}/assets/img/logos/nurture-logo.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section pt-150 md:pt-80">
+        <div class="flex justify-center flex-wrap text-center">
+            <p class="h1 uppercase w-full pb-50">Blog &amp; Recipes</p>
+            <div class="w-full flex flex-wrap pod-row">
+                {% for item in posts %}
+                    {% include 'components/partials/single-pod.twig' with { 'item': item } %}
+                {% endfor %}
+            </div>
+            <a href="/blog/" class="mt-50 ff-proxima uppercase bold border-bottom-black thick-border spaced-letters">See more</a>
+        </div>
+    </div>
+
+{% endblock %}
