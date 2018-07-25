@@ -2,7 +2,7 @@
 /**
  * Register custom taxonomies
  *
- * @since jwe 1.0
+ * @since FTC 1.0
  * @return void
  */
 

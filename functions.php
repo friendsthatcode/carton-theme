@@ -8,15 +8,15 @@
  *
  *
  * @package WordPress
- * @subpackage TJ_Blank
- * @since jwe 1.0
+ * @subpackage FTC Theme
+ * @since FTC 1.0
  */
 
 /**
  * Loops through functions folder and requires files
  * Requires PHP 5.3 or above.
  *
- * @since jwe 1.0
+ * @since FTC 1.0
  * @return void
  */
 $files = new \FilesystemIterator( __DIR__.'/functions', \FilesystemIterator::SKIP_DOTS );

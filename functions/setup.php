@@ -4,7 +4,7 @@
  * Uncomment the required functionality and see specific function file
  * for addition configuration.
  *
- * @since jwe 1.0
+ * @since FTC 1.0
  * @return void
  */
 
