@@ -3,8 +3,9 @@
 // Change login logo
 function my_login_logo() { ?>
     <style type="text/css">
+    	/*change the below URL*/
         .login h1 a {
-            /*background-image: url(/wp-content/themes/amin/assets/img/amin-logo.svg);*/
+            background-image: url('https://placebear.com/g/200/150.jpg');
             width: 220px;
             background-size: 100%;
         }
