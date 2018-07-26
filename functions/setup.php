@@ -10,11 +10,41 @@
 
 add_action('after_switch_theme', 'setup_carton_theme');
 function setup_carton_theme () {
-	$result = activate_plugin('duplicate-page/duplicate-page.php');
-	if ( is_wp_error( $result ) ) {
-		// Process Error
-		echo 'error!';
+	$plugins = array(
+		'timber-library/timber.php',
+		'advanced-custom-fields-pro/acf.php',
+		'discourage-search-engines-by-url/discourage-search-engines-by-url.php'
+	);
+	foreach ($plugins as $key => $plugin) {
+		$current = get_option( 'active_plugins' );
+		$plugin = plugin_basename(trim($plugin));
+		if ( !in_array( $plugin, $current ) ) {
+			$current[] = $plugin;
+			sort( $current );
+			do_action( 'activate_plugin', trim( $plugin ) );
+			update_option( 'active_plugins', $current );
+			do_action( 'activate_' . trim( $plugin ) );
+			do_action( 'activated_plugin', trim( $plugin) );
+		}
 	}
+	update_option('dseburl_url', WP_HOME);
+	update_option('dseburl_hide_icon', '');
+	update_option('show_on_front', 'page');
+	update_option('page_on_front', 2);
+	update_option('blogdescription', 'Another WP site build with Juicebox!');
+	update_option('permalink_structure', '/%postname%/');
+	update_option('blog_public', 1); // this might seem odd, but it is needed for the dsbburl options to work.
+
+	// Rename the sample page to Home, and clearout the content we don't need. We like Timber & ACF, not default WP WYSIWYG.
+	$samplePage = array(
+		'ID' => 2,
+		'post_title' => 'Home',
+		'post_name' => 'home',
+		'post_content' => '',
+	);
+	wp_update_post($samplePage);
+
+	return null;
 }
 
 //Add support for post thmbnaiils
