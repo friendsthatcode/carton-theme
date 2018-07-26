@@ -1,38 +1,3 @@
-<div class="footer">
-    <div class="footer-illustration z-1">
-        <img src="{{ theme.uri }}/assets/img/illustrations/footer-illustration.png" alt="">
-    </div>
-    <div class="bg-colour-inner-background pt-100 pb-50 relative z-2">
-        <div class="fixed-container flex flex-wrap justify-center text-center">
-            <p class="h3 uppercase w-full">Stay informed, join our newsletter</p>
-            <div class="form-wrap email-signup">
-                {% filter shortcodes %}
-                    [gravityform id=2 title=false description=false ajax=true]
-                {% endfilter %}
-            </div>
-            <div class="py-80 w-full">
-                {% include 'components/partials/social-list.twig' %}
-            </div>
-            <div class="w-full flex flex-wrap justify-between footer-nav">
-                <div class="md:w-full md:pb-10">
-                    <a class="hov:colour-primary" href="changeme"><span>T&amp;C's</span></a>
-                    <span class='px-5'>|</span>
-                    <a class="hov:colour-primary" href="changeme"><span>Privacy Policy</span></a>
-                    <span class='px-5'>|</span>
-                    <a class="hov:colour-primary" href="changeme"><span>Cookie Policy</span></a>
-                </div>
-                <div class="md:w-full md:pb-10">
-                    <span>Copyright &copy; 2018 FTCuropean Ltd. All Rights Reserved.</span>
-                </div>
-                <div class="md:w-full">
-                    <span>Site Designed by <a target="_blank" href="https://www.strawberrysoup.co.uk/" class="hov:colour-primary">Strawberrysoup</a></span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 {{ wp_footer }}
-
 </body>
-
 </html>

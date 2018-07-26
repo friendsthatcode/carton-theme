@@ -5,50 +5,9 @@
  		<meta http-equiv="X-UA-Compatible" content="IE=9;IE=10;IE=Edge,chrome=1"/>
 		<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
   		<meta name="viewport" content="width=100%, initial-scale=1, minimum-scale=1, user-scalable=no, maximum-scale=1">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 		{{ wp_head }}
-
-		<script>
-		  (function(d) {
-		    var config = {
-		      kitId: 'zpk1agy',
-		      scriptTimeout: 3000,
-		      async: true
-		    },
-		    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-		  })(document);
-	  	</script>
-
 	</head>
 	<body class="{{ admin_bar ? 'admin-bar' }}">
 		<span style="display:none;">
 			{% include "./components/svg-sprite.twig" %}
 		</span>
-		<div class="header relative z-5">
-		    <div class="bg-colour-background">
-		        <div class="fixed-container py-10 md:py-5">
-		            <div class="flex align-center justify-between">
-		                <a href="/">
-		                    <svg class="logo">
-		                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#jwe-logo"></use>
-		                    </svg>
-		                </a>
-						{% include 'components/partials/desktop-menu.twig' %}
-						<div class="none md:block mobile-menu">
-						    <div class="js-mobile-toggle mobile-toggle pointer flex align-end">
-						        <span class="uppercase menu-text pr-10">Menu</span>
-						        <div class="hamburger-wrap">
-						            <span class="hamburger">
-						                <span></span>
-						                <span></span>
-						                <span></span>
-						            </span>
-						        </div>
-						    </div>
-						</div>
-		            </div>
-		        </div>
-			    {% include 'components/partials/mobile-menu.twig' %}
-		    </div>
-		</div>
