@@ -73,10 +73,7 @@ function theme_setup() {
 		);
 		wp_update_post($samplePage);
 
-		global $wp_rewrite;
-	    $wp_rewrite->set_permalink_structure('/%postname%/');
-	    $wp_rewrite->flush_rules();
-		
+		add_action('init', 'set_permalink');
 		update_option('carton_opened', 1);
 	}
 
@@ -90,6 +87,11 @@ function theme_setup() {
 	add_action('wp_enqueue_scripts', 'add_scripts');
 
     register_nav_menu('main', 'Main Nav');
+}
+
+function set_permalink(){
+    global $wp_rewrite;
+    $wp_rewrite->set_permalink_structure('/%postname%/');
 }
 
 // Disable support for comments and trackbacks in post types
