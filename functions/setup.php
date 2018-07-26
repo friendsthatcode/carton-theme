@@ -73,9 +73,10 @@ function theme_setup() {
 		);
 		wp_update_post($samplePage);
 
-		add_action('init', 'set_permalink');
 		update_option('carton_opened', 1);
 	}
+
+	add_action('init', 'set_permalink');
 
 	// Setup Custom Post types.
 	add_action('init', 'custom_post_type');
