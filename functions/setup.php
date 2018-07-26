@@ -8,6 +8,15 @@
  * @return void
  */
 
+add_action('after_switch_theme', 'setup_carton_theme');
+function setup_carton_theme () {
+	$result = activate_plugin('duplicate-page/duplicate-page.php');
+	if ( is_wp_error( $result ) ) {
+		// Process Error
+		echo 'error!';
+	}
+}
+
 //Add support for post thmbnaiils
 add_theme_support('post-thumbnails');
 add_theme_support('menus');
