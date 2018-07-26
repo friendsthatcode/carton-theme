@@ -62,7 +62,6 @@ function theme_setup() {
 		update_option('show_on_front', 'page');
 		update_option('page_on_front', 2);
 		update_option('blogdescription', 'Another WP site build with Juicebox!');
-		update_option('permalink_structure', "/%postname%/");
 		update_option('blog_public', 1); // this might seem odd, but it is needed for the dsbburl options to work.
 
 		// Rename the sample page to Home, and clearout the content we don't need. We like Timber & ACF, not default WP WYSIWYG.
@@ -73,6 +72,11 @@ function theme_setup() {
 			'post_content' => '',
 		);
 		wp_update_post($samplePage);
+
+		global $wp_rewrite;
+	    $wp_rewrite->set_permalink_structure('/%postname%/');
+	    $wp_rewrite->flush_rules();
+		
 		update_option('carton_opened', 1);
 	}
 
