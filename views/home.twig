@@ -1,9 +1,210 @@
 {% extends 'base.twig' %}
 {% block content %}
-    <div class="container">
-        <div class="w-2/3 md:w-full text-center">
-            <h1 class="h1">This is a homepage. Should be better than this really.</h1>
+    <div class="section mt-80">
+        <div class="container">
+            <h1 class="h1">JuiceDocs</h1>
         </div>
     </div>
-
+    <div class="section">
+        <div class="container">
+            <p class="h3 pb-20">Display:</p>
+        </div>
+    </div>
+    <div class="section">
+            <div class="container">
+                <p class="h3 pb-20">Prefixes:</p>
+                <p class="mb-20">
+                    We can prefix our classes to determine functionality of elements at descending breakpoints (specified in <code>screen-sizes.scss</code>).<br/><br/>These prefixes are
+                    <code>xl:</code>,
+                    <code>lg:</code>,
+                    <code>md:</code>
+                    &amp;
+                    <code>sm</code>.
+                </p>
+                <pre><code>&lt;div <span class="o">class=</span><span class="g">"md:none"</span>&gt;
+    <span class="d">&#47;&#47;element is hidden on mobile</span>
+&lt;/div&gt;</code></pre>
+                <pre><code>&lt;div <span class="o">class=</span><span class="g">"none md:block"</span>&gt;
+    <span class="d">&#47;&#47;element is hidden on desktop and visible on mobile</span>
+&lt;/div&gt;</code></pre>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="container">
+            <div class="py-20 flex flex-wrap">
+                <div class="w-1/4">
+                    <p class="h3 pb-20">Headings:</p>
+                </div>
+                <div class="w-3/4">
+                    <p class="h1">This is a h1</p>
+                    <p class="h2">This is a h2</p>
+                    <p class="h3">This is a h3</p>
+                    <p class="h4">This is a h4</p>
+                </div>
+            </div>
+            <p class="mb-10">A class of 'h3' can be added to a
+                <code>&lt;p&gt;</code>
+                tag to avoid being used as an indexable element.</p>
+            <pre><code>&lt;p <span class="o">class=</span><span class="g">"h3"</span>&gt;<span class="d">I am a paragraph element, with class="h3"</span>&lt;/p&gt;</code><p class="h3">I am a paragraph element, with class="h3"</p></pre>
+        </div>
+    </div>
+    <div class="section">
+        <div class="container">
+            <div class="w-full pb-20">
+                <h2 class="h3 pb-10">Column layouts:</h2>
+                <p class="pb-10">Rows of columns must be wrapped in an element with <code>flex</code></p>
+                <p class="pb-10">Columns are prefixed with <code>w-</code> (width). They can be expressed in the range <code>w-1/12</code> to <code>w-12/12</code>.</p>
+                <p class="pb-10">Simplified fractions are used for common column widths.</p>
+                <ul class="bullet-list">
+                    <li><code>w-12/12</code> - <code>w-full</code></li>
+                    <li><code>w-6/12</code> - <code>w-1/2</code></li>
+                    <li><code>w-4/12</code> - <code>w-1/3</code></li>
+                    <li><code>w-3/12</code> - <code>w-1/4</code></li>
+                </ul>
+            </div>
+            <!-- Halves -->
+            <div class="flex flex-wrap">
+                <div class="w-1/2 text-center white pr-20">
+                    <p class="py-20 bg-colour-primary rounded-edges">
+                        w-1/2 md:w-full
+                    </p>
+                </div>
+                <div class="w-1/2 text-center white pl-20">
+                    <p class="py-20 bg-colour-primary rounded-edges">
+                        w-1/2
+                    </p>
+                </div>
+            </div>
+            <!-- Thirds -->
+            <div class="flex flex-wrap pt-20">
+                <div class="w-1/3 text-center white pr-20 md:w-full md:pr-0 md:pb-10">
+                    <p class="py-20 bg-colour-primary rounded-edges">
+                        w-1/3 md:w-full
+                    </p>
+                </div>
+                <div class="w-1/3 text-center white px-20 md:w-full md:px-0 md:pb-10">
+                    <p class="py-20 bg-colour-primary rounded-edges">
+                        w-1/3 md:w-full
+                    </p>
+                </div>
+                <div class="w-1/3 text-center white pl-20 md:w-full md:pl-0 md:pb-10">
+                    <p class="py-20 bg-colour-primary rounded-edges">
+                        w-1/3 md:w-full
+                    </p>
+                </div>
+            </div>
+            <!-- Quarters -->
+            <div class="flex flex-wrap pt-20">
+                <div class="w-1/4 text-center white pr-20">
+                    <p class="py-20 bg-colour-primary rounded-edges">
+                        w-1/4
+                    </p>
+                </div>
+                <div class="w-1/4 text-center white px-20">
+                    <p class="py-20 bg-colour-primary rounded-edges">
+                        w-1/4
+                    </p>
+                </div>
+                <div class="w-1/4 text-center white px-20">
+                    <p class="py-20 bg-colour-primary rounded-edges">
+                        w-1/4
+                    </p>
+                </div>
+                <div class="w-1/4 text-center white pl-20">
+                    <p class="py-20 bg-colour-primary rounded-edges">
+                        w-1/4
+                    </p>
+                </div>
+            </div>
+            <!-- Spaced layouts -->
+            <div class="w-full pt-40 pb-20">
+                <p class="pb-10">We can also space columns apart using flex justify modifiers.</p>
+                <ul class="bullet-list mb-20">
+                    <li><code>justify-center</code></li>
+                    <li><code>justify-between</code></li>
+                    <li><code>justify-around</code></li>
+                    <li><code>justify-start</code></li>
+                    <li><code>justify-end</code></li>
+                </ul>
+            </div>
+            <div class="flex flex-wrap justify-between">
+                <div class="w-1/3 text-center white">
+                    <p class="py-20 bg-colour-primary rounded-edges">
+                        w-1/3
+                    </p>
+                </div>
+                <div class="w-1/3 text-center white">
+                    <p class="py-20 bg-colour-primary rounded-edges">
+                        w-1/3
+                    </p>
+                </div>
+            </div>
+            <div class="flex flex-wrap justify-center pt-20 pb-40">
+                <div class="w-1/3 text-center white pr-20">
+                    <p class="py-20 bg-colour-primary rounded-edges">
+                        w-1/3
+                    </p>
+                </div>
+                <div class="w-1/3 text-center white pl-20">
+                    <p class="py-20 bg-colour-primary rounded-edges">
+                        w-1/3
+                    </p>
+                </div>
+            </div>
+            <div class="flex flex-wrap justify-center text-center mb-20">
+                <div class="w-2/3 p-20 bg-colour-primary rounded-edges">
+                    <p class="white">w-2/3 justify-center</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="container">
+            <div class="w-full">
+                <h2 class="h3 pb-10">Spacing:</h2>
+                <p class="pb-10">Variables for spacing are declared in <code>global_variables.scss</code>. These variables can be manually set. The 'sizes' object dictates the varying amounts of spacing that can be used.</p>
+                <p class="pb-10">Spacing classes are named in the format <code>{breakpoint}:{property}{side}-{size}</code>.</p>
+                <p class="pb-10">Where <i>property</i> is one of:</p>
+                <ul class="bullet-list mb-20">
+                    <li><code>m</code> - used for <code>margin</code></li>
+                    <li><code>p</code> - used for <code>padding</code></li>
+                </ul>
+                <p class="pb-10">Where <i>sides</i> is one of:</p>
+                <ul class="bullet-list mb-20">
+                    <li><code>t</code> - used for <code>top</code></li>
+                    <li><code>b</code> - used for <code>bottom</code></li>
+                    <li><code>l</code> - used for <code>left</code></li>
+                    <li><code>r</code> - used for <code>right</code></li>
+                    <li><code>y</code> - used for <code>top</code> and <code>bottom</code></li>
+                    <li><code>x</code> - used for <code>left</code> and <code>right</code></li>
+                </ul>
+                <p class="pb-10">Where <i>size</i> is one of:</p>
+                <ul class="bullet-list mb-20">
+                    <li><code>{size}</code> specifed in sizes object in <code>global_variables.scss</code></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="container">
+            <div class="w-full">
+                <h2 class="h3 pb-20">Borders:</h2>
+                <p>Similar to spacing, borders work in the format <code>{breakpoint}:border-{side}-{colour}</code></p>
+            </div>
+            <div class="flex flex-wrap p-20">
+                <div class="p-50 mr-10 bg-gallery border-colour-primary"></div>
+                <div class="p-50 mr-10 bg-gallery border-top-colour-primary"></div>
+                <div class="p-50 mr-10 bg-gallery border-right-colour-primary"></div>
+                <div class="p-50 mr-10 bg-gallery border-bottom-colour-primary"></div>
+                <div class="p-50 bg-gallery border-left-colour-primary"></div>
+            </div>
+            <pre><code>&lt;div <span class="o">class=</span><span class="g">"border-colour-primary"</span>&gt;&lt;/div&gt;
+&lt;div <span class="o">class=</span><span class="g">"border-top-colour-primary"</span>&gt;&lt;/div&gt;
+&lt;div <span class="o">class=</span><span class="g">"border-right-colour-primary"</span>&gt;&lt;/div&gt;
+&lt;div <span class="o">class=</span><span class="g">"border-bottom-colour-primary"</span>&gt;&lt;/div&gt;
+&lt;div <span class="o">class=</span><span class="g">"border-left-colour-primary"</span>&gt;&lt;/div&gt;</code></pre>
+            <p class="my-20">We can also remove borders with <code>border-{side}-none</code>.</p>
+        </div>
+    </div>
 {% endblock %}
