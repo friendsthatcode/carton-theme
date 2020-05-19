@@ -16,14 +16,11 @@ add_theme_support('menus');
 add_filter('timber_context','add_to_context');
 
 function add_to_context($data) {
-	// $data['menu'] = new TimberMenu('menu');
 	$data['env'] = WP_ENV;
+	$data['ip'] = $_SERVER['REMOTE_ADDR'];
 	$data['options'] = get_fields('option');
-
 	$data['admin_bar'] = is_admin_bar_showing();
-
 	$data['main_menu'] = new TimberMenu('main-menu');
-
 	return $data;
 }
 
@@ -43,7 +40,8 @@ function theme_setup() {
 		$plugins = array(
 			'timber-library/timber.php',
 			'advanced-custom-fields-pro/acf.php',
-			'discourage-search-engines-by-url/discourage-search-engines-by-url.php'
+			'discourage-search-engines-by-url/discourage-search-engines-by-url.php',
+			'wp-smartcrop/wp-smartcrop.php'
 		);
 		foreach ($plugins as $key => $plugin) {
 			$current = get_option( 'active_plugins' );
