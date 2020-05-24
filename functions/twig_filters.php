@@ -47,7 +47,7 @@ function randomNumber($min, $max) {
 // {{ post.get_field('wysiwyg')|wysiwygHeaders }}
 function wysiwygHeaders($wysiwyg) {
 	foreach (range(1, 6) as $i) {
-		$wysiwyg = str_replace('<h' . $i . '>', '<p class="h4">', $wysiwyg);
+		$wysiwyg = str_replace('<h' . $i . '>', '<p class="h' . $i . '">', $wysiwyg);
 		$wysiwyg = str_replace('</' . $i . '>', '</p>', $wysiwyg);
 	}
 	return $wysiwyg;
