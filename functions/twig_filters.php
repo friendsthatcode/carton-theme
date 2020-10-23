@@ -54,7 +54,7 @@ function wysiwygHeaders($wysiwyg) {
 }
 
 function focal_crop_position($image){
-	if($image->_wpsmartcrop_image_focus){
+	if(isset($image->_wpsmartcrop_image_focus)){
 		$crop = unserialize($image->_wpsmartcrop_image_focus);
 		$position = $crop['left'] . '% ' . $crop['top'] . '%';
 		return $position;
